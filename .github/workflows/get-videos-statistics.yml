@@ -15,7 +15,7 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: 18.x
-        env:
+      env:
           youtubeApiKey: ${{ secrets.YOUTUBE_API_KEY }}
     - run: npm run get-videos-statistics
     - run: |
