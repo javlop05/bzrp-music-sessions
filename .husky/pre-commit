@@ -1,4 +1,8 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
+# Issue: https://github.com/okonet/lint-staged/issues/1164#issue-1256332744
+# Solution: https://github.com/typicode/husky/issues/968#issuecomment-1176848345
+exec >/dev/tty 2>&1
+
 npx lint-staged

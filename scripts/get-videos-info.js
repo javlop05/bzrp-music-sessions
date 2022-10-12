@@ -3,21 +3,14 @@
  */
 const { youtubeApi } = require("./youtube-api");
 const { saveVideoInfoToJson } = require("./save-video-info-to-json");
-
-// const BZRP_ID = "UCmS75G-98QihSusY7NfCZtw";
-const UPLOADS_ID = "UUmS75G-98QihSusY7NfCZtw";
+const { filterMusicSessions } = require("./filter/filter-music-sessions");
+const { UPLOADS_ID } = require("./bzrp-ids");
 
 const QUERY_PARAMS = {
   maxResults: 50,
   playlistId: UPLOADS_ID,
   part: "snippet",
 };
-
-const MUSIC_SESSION_TITLE_TEXT = "music session";
-const filterMusicSessions = (items) =>
-  items.filter(({ snippet }) =>
-    snippet.title.toLowerCase().includes(MUSIC_SESSION_TITLE_TEXT)
-  );
 
 const fetchSessions = async (nextPageToken) => {
   const queryParams = { ...QUERY_PARAMS };
