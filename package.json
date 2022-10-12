@@ -7,8 +7,12 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "lint:fix": "next lint --fix",
+    "prettier": "prettier . --list-different || (echo '↑↑ these files are not prettier formattet ↑↑' && exit 1)",
+    "prettier:format": "prettier . --write",
     "get-videos-info": "node --experimental-fetch scripts/get-videos-info.js",
-    "get-videos-statistics": "node --experimental-fetch scripts/get-today-viewcounts.js"
+    "get-videos-statistics": "node --experimental-fetch scripts/get-today-viewcounts.js",
+    "prepare": "husky install"
   },
   "dependencies": {
     "next": "12.3.1",
@@ -16,7 +20,18 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.1.2",
+    "@commitlint/config-conventional": "^17.1.0",
     "eslint": "8.23.1",
-    "eslint-config-next": "12.3.1"
+    "eslint-config-next": "12.3.1",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "prettier": "2.7.1"
+  },
+  "lint-staged": {
+    "*.{js,json,md}": "prettier --write",
+    "*.{js}": "eslint --fix"
   }
 }
