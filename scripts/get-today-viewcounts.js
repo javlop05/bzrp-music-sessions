@@ -12,7 +12,7 @@ const time = new Date().toISOString();
 const getVideoViewCount = async (videoId) => {
   const queryParams = {
     ...QUERY_PARAMS,
-    id: videoId
+    id: videoId,
   };
 
   try {
@@ -20,10 +20,10 @@ const getVideoViewCount = async (videoId) => {
     const { viewCount, likeCount, commentCount } = data.items[0].statistics;
 
     return {
-        time,
-        viewCount,
-        likeCount,
-        commentCount
+      time,
+      viewCount,
+      likeCount,
+      commentCount,
     };
   } catch (err) {
     console.error(err);
@@ -37,7 +37,7 @@ fs.readdir(VIDEOS_FOLDER_PATH, async (err, files) => {
 
   for (let file of files) {
     const videoId = file.replace(".json", "");
-    
+
     try {
       const data = await getVideoViewCount(videoId);
 
