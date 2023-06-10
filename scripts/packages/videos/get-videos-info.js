@@ -1,10 +1,10 @@
 /**
  * This script uses fetch API -> Node 18 is a must
  */
-const { youtubeApi } = require("./youtube-api");
+const { youtubeApi } = require("../youtube-api");
 const { saveVideoInfoToJson } = require("./save-video-info-to-json");
-const { filterMusicSessions } = require("./filter/filter-music-sessions");
-const { UPLOADS_ID } = require("./constants/bzrp-ids");
+const { filterMusicSessions } = require("../../filter/filter-music-sessions");
+const { UPLOADS_ID } = require("../../constants/bzrp-ids");
 
 const QUERY_PARAMS = {
   maxResults: 50,

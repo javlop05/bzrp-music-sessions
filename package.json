@@ -10,8 +10,9 @@
     "lint:fix": "next lint --fix",
     "prettier": "prettier . --list-different || (echo '↑↑ these files are not prettier formattet ↑↑' && exit 1)",
     "prettier:format": "prettier . --write",
-    "get-videos-info": "node --experimental-fetch scripts/get-videos-info.js",
-    "get-videos-statistics": "node --experimental-fetch scripts/get-today-viewcounts.js",
+    "get-videos-info": "node --experimental-fetch scripts/packages/videos/get-videos-info.js",
+    "get-videos-statistics": "node --experimental-fetch scripts/packages/statistics/get-today-statistics.js",
+    "get-today-music-sessions": "node --experimental-fetch scripts/packages/videos/get-today-music-sessions.js",
     "prepare": "husky install",
     "test": "jest",
     "test:watch": "jest --watch"

@@ -1,8 +1,7 @@
 const fs = require("fs");
+const { STATISTICS_FOLDER_PATH } = require("../../constants/paths");
 
-const STATISTICS_FOLDER_PATH = "./public/data/statistics";
-
-const saveViewcountToJson = (id, data) => {
+const saveStatisticsToJson = (id, data) => {
   const fileName = `${id}.json`;
   let { time, ...todayStatistics } = data;
 
@@ -21,4 +20,4 @@ const saveViewcountToJson = (id, data) => {
   });
 };
 
-module.exports = saveViewcountToJson;
+module.exports = saveStatisticsToJson;

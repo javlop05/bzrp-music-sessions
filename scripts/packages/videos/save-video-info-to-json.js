@@ -1,6 +1,5 @@
 const fs = require("fs");
-
-const VIDEOS_FOLDER_PATH = "./public/data/videos";
+const { VIDEOS_FOLDER_PATH } = require("../../constants/paths");
 
 const saveVideoInfoToJson = (data) => {
   const { id, title } = data;
@@ -16,7 +15,4 @@ const saveVideoInfoToJson = (data) => {
   );
 };
 
-module.exports = {
-  VIDEOS_FOLDER_PATH,
-  saveVideoInfoToJson,
-};
+module.exports = saveVideoInfoToJson;
