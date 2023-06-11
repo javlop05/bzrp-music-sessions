@@ -31,7 +31,7 @@ jobs:
           git push
 
   getVideoStatistics:
-    needs: downloadAndPublish
+    needs: downloadTodayMusicSession
     runs-on: ubuntu-latest
 
     steps:
