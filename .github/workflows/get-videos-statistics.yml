@@ -47,6 +47,9 @@ jobs:
         with:
           node-version: 18.x
 
+      - name: Download commit from previous job if exists
+        run: git pull
+
       - name: Get statistics of the videos
         run: npm run get-videos-statistics
         env:
