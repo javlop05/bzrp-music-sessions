@@ -37,6 +37,7 @@ jobs:
   getVideoStatistics:
     needs: downloadTodayMusicSession
     runs-on: ubuntu-latest
+    if: always()
 
     steps:
       - uses: actions/checkout@v3

@@ -3,7 +3,7 @@
  */
 
 const { youtubeApi } = require("../youtube-api");
-const { saveVideoInfoToJson } = require("./save-video-info-to-json");
+const saveVideoInfoToJson = require("./save-video-info-to-json");
 const { filterMusicSessions } = require("../../filter/filter-music-sessions");
 const { UPLOADS_ID } = require("../../constants/bzrp-ids");
 const { filterTodayVideos } = require("../../filter/filter-today-videos");
